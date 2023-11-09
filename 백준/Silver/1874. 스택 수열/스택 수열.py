@@ -1,26 +1,23 @@
 n=int(input())
 stack=[]
-R=[]
-strt=1
-b=1
+r=[]
+now=1
+err=0
 
 for i in range(n):
     k=int(input())
-
-    while strt<=k:
-        stack.append(strt)
-        R.append('+')
-        strt+=1
-    
+    while now<=k:
+        stack.append(now)
+        r.append('+')
+        now+=1
     if stack[-1]==k:
         stack.pop()
-        R.append('-')
-    
+        r.append('-')
     else:
-        b=0
+        err=1
+        break
 
-if b==0:
-    print('NO')
-else:
-    for i in R:
+if err==0:
+    for i in r:
         print(i)
+else: print("NO")
